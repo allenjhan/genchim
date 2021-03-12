@@ -1,0 +1,15 @@
+* Coding
+** current
+*** TODO modify genchim so that more than one argument can be supplied
+    SCHEDULED: <2016-09-05 Mon>
+** done
+*** DONE add an example to the sample document which uses fenboard
+    SCHEDULED: <2016-09-05 Mon>
+#+begin_example
+\fenboard{r5k1/1b1p1ppp/p7/1p1Q4/2p1r3/PP4Pq/BBP2b1P/R4R1K w - - 0 20}
+#+end_example
+*** CANL understand why the fenboard command is creating a formfeed character at the beginning instead
+    SCHEDULED: <2016-09-05 Mon>
+* Reading
+** current
+** done

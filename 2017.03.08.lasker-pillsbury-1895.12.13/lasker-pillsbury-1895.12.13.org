@@ -1,0 +1,137 @@
+* [[http://www.chessgames.com/perl/chessgame?gid=1109091][link]]
+* complete game pgn
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-fullgame '\\\\hidemoves{1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Be7 7. O-O Nc6 8. Re1 Bg4 9. c3 f5 10. Qb3 O-O 11. Bf4 Bxf3 12. gxf3 Ng5 13. Kg2 Qd7 14. Qc2 Ne6 15. Bc1 Bd6 16. Nd2 Rae8 17. Nf1 Nexd4 18. Qd1 Rxe1 19. Qxe1 Nxf3 20. Kxf3 f4 21. Qd1 Ne5 22. Ke2 Qg4 23. Kd2 Qxd1 24. Kd1 Nxd3 25. Ke2 Ne5 26. f3 Re8 27. b3 Ng4 28. Kd2 Ne3 29. Bb2 Ng2 30. h3 Bc5 31. Nh2 Bf2 32. c4 dxc4 33. bxc4 h5}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-fullgame.png]]
+* What if 11.Qxb7
+** starting position
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-01.01 '\\\\fenboard{r2q1rk1/pQp1b1pp/2n5/3p1p2/3Pn1b1/2PB1N2/PP3PPP/RNB1R1K1 b - - 0 11}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-01.01.png]]
+** the engine's analysis is hard to understand, but black is much better after 11...Rf6.
+** Mason thinks that white should take the pawn; here is his variation below; his point is that white should be consistent and follow his plan
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-01.02 '\\\\fenboard{r2q1rk1/pQp1b1pp/2n5/3p1p2/3Pn1b1/2PB1N2/PP3PPP/RNB1R1K1 b - - 0 11}\\hidemoves{11...Rf6 12.Qb3 Rg6 13.Qd1}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-01.02.png]]
+
+* Again, what if 14.Qxb7
+** On low depth, the engine is saying that white should play Qxb7 and keep equality. It feels very engine-like, this move. The justification is that, having played Bf4, white can take on c7. But with an open kingside, this feels like a very risky move from white, and most people would not play it. If white does play it, black should use it as an invitation to attack
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-02.01 '\\\\fenboard{r4rk1/pppqb1pp/2n5/3p1pn1/3P1B2/1QPB1P2/PP3PKP/RN2R3 w - - 3 14}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-02.01.png]]
+* The engine confirms that 14...Ne6 is strong 
+** starting position
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-03.01 '\\\\fenboard{r4rk1/pppqb1pp/2n5/3p1pn1/3P1B2/2PB1P2/PPQ2PKP/RN2R3 b - - 4 14}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-03.01.png]]
+** white cannot take on f5
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-03.02 '\\\\fenboard{r4rk1/pppqb1pp/2n5/3p1pn1/3P1B2/2PB1P2/PPQ2PKP/RN2R3 b - - 4 14}\\hidemoves{14...Ne6 15.Bxf5 Nxf5+ 16.Kh1 Rxf5}'
+#+end_src
+* the engine thinks Bg3 is playable, and is white's best chance; black is still at -1 though
+** starting position
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-04.01 '\\\\fenboard{r4rk1/pppqb1pp/2n1n3/3p1p2/3P1B2/2PB1P2/PPQ2PKP/RN2R3 w - - 5 15}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-04.01.png]]
+** after 15.Bg3, 15...f4 isn't even the engine's strongest reply; the idea is that black wants to make the resource 16...Nf4+ work, so he plays 15...Bd6, and if white takes on f5 now, then black wins the queen with -2.6
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-04.02 '\\\\fenboard{r4rk1/pppqb1pp/2n1n3/3p1p2/3P1B2/2PB1P2/PPQ2PKP/RN2R3 w - - 5 15}\\hidemoves{15.Bg3 Bd6 16.Bxf5 Rxf5 17.Qxf5 Nf4+ 18.Qxf4 Bxf4 19.Bxf4}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-04.02.png]]
+** still, it's not clear how black should respond if 15.Bg3, although the human move would be to push on f4; so let's look at 15.Bg3 f4; white apparently has play against the black king after Bf5; there are two possibilities then, either black takes on d4 with the knight, or plays Ncd8; let us assume Ncxd4,
+*** starting position
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-04.03 '\\\\fenboard{r4rk1/pppqb1pp/2n5/3p1B2/3n1p2/2P2PB1/PPQ2PKP/RN2R3 w - - 0 17}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-04.03.png]]
+*** here's an example variation that the engine says is equal; but looking at black's kingside, his position looks very difficult to play; then again, white's kingside is pretty loose too
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-04.04 '\\\\fenboard{r4rk1/pppqb1pp/2n5/3p1B2/3n1p2/2P2PB1/PPQ2PKP/RN2R3 w - - 0 17}\\hidemoves{17.Ncxd4 cxd4 18.Bxh7+ Kh8 19.Qd1 Bc5 20.Bd3 fxg3 21.f4 g6 22.fxg3}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-04.04.png]]
+* in the game, after 15...Bd6, black is up by -1.7
+** starting position
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-05.01 '\\\\fenboard{r4rk1/pppq2pp/2nbn3/3p1p2/3P4/2PB1P2/PPQ2PKP/RNB1R3 w - - 7 16}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-05.01.png]]
+** if Bxf5, black will get a queen for two pieces, minus a pawn
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-05.02 '\\\\fenboard{r4rk1/pppq2pp/2nbn3/3p1p2/3P4/2PB1P2/PPQ2PKP/RNB1R3 w - - 7 16}\\hidemoves{16.Bxf5 Rxf5 17.Qxf5 Nf4+ 18.Qxf4 Bxf4 19.Bxf4}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-05.02.png]]
+* I don't understand the combination after 17...Nexd4
+** starting position
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-06.01 '\\\\fenboard{4rrk1/pppq2pp/2nb4/3p1p2/3n4/2PB1P2/PPQ2PKP/R1B1RN2 w - - 0 18}'
+#+end_src
+
+#+RESULTS:
+  [[./chessimage/lasker-pillsbury-1895.12.13-06.01.png]]
+** if cxd4, then black get an exchange and a pawn, plus awful position
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-06.02 '\\\\fenboard{4rrk1/pppq2pp/2nb4/3p1p2/3n4/2PB1P2/PPQ2PKP/R1B1RN2 w - - 0 18}\\hidemoves{18.cxd4 Rxe1 19.Qc3 Bb4 20.Qb3}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-06.02.png]]
+
+** if Rxe8, then it's a rook, a knight, and a pawn for a queen
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-06.03 '\\\\fenboard{4rrk1/pppq2pp/2nb4/3p1p2/3n4/2PB1P2/PPQ2PKP/R1B1RN2 w - - 0 18}\\hidemoves{18.Rxe8 Nxc2 19.Rxf8+ Kxf8 20.Bxc2}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-06.03.png]]
+
+** if Qd1, then white is down a pawn, and will exchange rook, but it's relatively best
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-06.04 '\\\\fenboard{4rrk1/pppq2pp/2nb4/3p1p2/3n4/2PB1P2/PPQ2PKP/R1B1RN2 w - - 0 18} \\hidemoves{18.Qd1}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-06.04.png]]
+** this is why Mason recommended Qd1 instead of Qc2 earlier; however, the engine disagrees and thinks that white could have put the bishop on g3 with the idea of playing Qxh7, in which case Nexd4 would not be a discovered attack against an unprotected rook
+* in this position, the engine agrees with Pillsbury that Nxf3 is the strongest continuation, drawing the king up the board
+** starting position
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-07.01 '\\\\fenboard{5rk1/pppq2pp/2nb4/3p1p2/3n4/2PB1P2/PP3PKP/R1B1QN2 b - - 0 19}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-07.01.png]]
+** the engine gives a nice variation with Qe6, not Ne5+ as in the game, as the strongest move; the idea is to bring up the pawns and control more squares around the king
+#+begin_src sh
+./genchim lasker-pillsbury-1895.12.13-07.02 '\\\\fenboard{5rk1/pppq2pp/2nb4/3p1p2/3n4/2PB1P2/PP3PKP/R1B1QN2 b - - 0 19}\\hidemoves{19...Nxf3 20.Kxf3 f4 21.Qd1 Qe6 22.Bb1 Kh8 23.Qc2 g6 24.Qd1 h5 25.h3 d4}'
+#+end_src
+
+#+RESULTS:
+ [[./chessimage/lasker-pillsbury-1895.12.13-07.02.png]]

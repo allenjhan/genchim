@@ -1,0 +1,26 @@
+* show-all-inline images is C-c C-x C-v
+* sample usage
+** compile genchim
+#+begin_src sh
+gcc genchim.c -o genchim
+chmod 557 genchim genchim.sh
+#+end_src
+
+#+RESULTS:
+
+** Kasparov gambit starting position; 1985 wcc game 16
+#+begin_src sh :results output
+./genchim pp66.01 '\\hidemoves{1. e4 c5 2.Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nb5 d6 6.c4 Nf6 7.N1c3 a6 8.Na3 d5}'
+#+end_src
+
+#+RESULTS:
+[[./chessimage/pp66.01.png]]
+
+** example position from [[http://tex.stackexchange.com/questions/29603/where-to-start-typesetting-chess-with-tex/29604#29604][website]]
+#+begin_src sh :results output
+./genchim misc-tact-pos '\\\\fenboard{r5k1/1b1p1ppp/p7/1p1Q4/2p1r3/PP4Pq/BBP2b1P/R4R1K w - - 0 20}\\n'
+#+end_src
+
+#+RESULTS:
+[[./chessimage/misc-tact-pos.png]]
+
